@@ -16,8 +16,11 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @Column(name = "member_id")
-    private Long memberId;
+    /*@Column(name = "member_id")
+    private Long memberId;*/
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     private LocalDateTime orderDate;
 
