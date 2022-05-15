@@ -20,6 +20,7 @@ public class Item {
 
     @Column(name = "item_name")
     private String name;
+
     private int price;
     private int stockQuantity;
 

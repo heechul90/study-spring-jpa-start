@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -16,8 +18,6 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    /*@Column(name = "member_id")
-    private Long memberId;*/
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
@@ -26,4 +26,7 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems =  new ArrayList<>();
 }
