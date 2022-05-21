@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest
@@ -24,6 +26,8 @@ class ItemTest {
         Movie movie = new Movie();
         movie.CreateItem("범죄도시", 20000, 10);
         movie.CreateMovie("snapDragon", "마동석");
+
+        movie.CreatedInfo("heechul", LocalDateTime.now());
 
         //when
         em.persist(movie);

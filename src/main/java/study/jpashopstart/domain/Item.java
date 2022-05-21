@@ -13,7 +13,7 @@ import java.util.List;
 @DiscriminatorColumn
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class Item {
+public abstract class Item extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "item_id")
