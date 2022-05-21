@@ -1,5 +1,6 @@
 package study.jpashopstart.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -7,19 +8,22 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Delivery {
 
     @Id @GeneratedValue
     @Column(name = "delivery_id")
     private Long id;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    private Address address;
 
     private DeliveryStatus status;
 
     /*@OneToOne(mappedBy = "delivery")
     private Order order;*/
+
+    public Delivery(Address address, DeliveryStatus status) {
+        this.address = address;
+        this.status = status;
+    }
 }

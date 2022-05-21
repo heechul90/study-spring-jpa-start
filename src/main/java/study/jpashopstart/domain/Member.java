@@ -21,8 +21,11 @@ public class Member {
     @Column(name = "member_name")
     private String name;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
 
+    public Member(String name, Address address) {
+        this.name = name;
+        this.address = address;
+    }
 }
