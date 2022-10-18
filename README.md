@@ -29,4 +29,4 @@
 9. 값 타입
     - 실전 예제 6 - 갑 타입 매핑
 
-[돌아가기](https://github.com/heechul90/study-jpa-basic)
+[[돌아가기]](https://github.com/heechul90/study-jpa-basic)
